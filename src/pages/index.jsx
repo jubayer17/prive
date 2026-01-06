@@ -124,7 +124,7 @@ function _getCurrentPage(url) {
     }
 
     const pageName = Object.keys(PAGES).find(page => page.toLowerCase() === urlLastPart.toLowerCase());
-    return pageName || Object.keys(PAGES)[0];
+    return pageName || 'Home';
 }
 
 // Create a wrapper component that uses useLocation inside the Router context
@@ -136,62 +136,62 @@ function PagesContent() {
         <Layout currentPageName={currentPage}>
             <Routes>            
                 
-                    <Route path="/" element={<About />} />
+                    <Route path="/" element={<Home />} />
                 
                 
-                <Route path="/About" element={<About />} />
+                <Route path="/about" element={<About />} />
                 
-                <Route path="/AdminDashboard" element={<AdminDashboard />} />
+                <Route path="/admindashboard" element={<AdminDashboard />} />
                 
-                <Route path="/BarberCalendar" element={<BarberCalendar />} />
+                <Route path="/barbercalendar" element={<BarberCalendar />} />
                 
-                <Route path="/BarberProfile" element={<BarberProfile />} />
+                <Route path="/barberprofile" element={<BarberProfile />} />
                 
-                <Route path="/Barbers" element={<Barbers />} />
+                <Route path="/barbers" element={<Barbers />} />
                 
-                <Route path="/Blog" element={<Blog />} />
+                <Route path="/blog" element={<Blog />} />
                 
-                <Route path="/BlogPost" element={<BlogPost />} />
+                <Route path="/blogpost" element={<BlogPost />} />
                 
-                <Route path="/Booking" element={<Booking />} />
+                <Route path="/booking" element={<Booking />} />
                 
-                <Route path="/BookingHistory" element={<BookingHistory />} />
+                <Route path="/bookinghistory" element={<BookingHistory />} />
                 
-                <Route path="/Contact" element={<Contact />} />
+                <Route path="/contact" element={<Contact />} />
                 
-                <Route path="/EditorDashboard" element={<EditorDashboard />} />
+                <Route path="/editordashboard" element={<EditorDashboard />} />
                 
-                <Route path="/FAQ" element={<FAQ />} />
+                <Route path="/faq" element={<FAQ />} />
                 
-                <Route path="/FaceAnalyzer" element={<FaceAnalyzer />} />
+                <Route path="/faceanalyzer" element={<FaceAnalyzer />} />
                 
-                <Route path="/GiftCards" element={<GiftCards />} />
+                <Route path="/giftcards" element={<GiftCards />} />
                 
-                <Route path="/HairTips" element={<HairTips />} />
+                <Route path="/hairtips" element={<HairTips />} />
                 
-                <Route path="/Home" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 
-                <Route path="/Memberships" element={<Memberships />} />
+                <Route path="/memberships" element={<Memberships />} />
                 
-                <Route path="/MyMembership" element={<MyMembership />} />
+                <Route path="/mymembership" element={<MyMembership />} />
                 
-                <Route path="/Privacy" element={<Privacy />} />
+                <Route path="/privacy" element={<Privacy />} />
                 
-                <Route path="/Profile" element={<Profile />} />
+                <Route path="/profile" element={<Profile />} />
                 
-                <Route path="/Reviews" element={<Reviews />} />
+                <Route path="/reviews" element={<Reviews />} />
                 
-                <Route path="/SavedBarbers" element={<SavedBarbers />} />
+                <Route path="/savedbarbers" element={<SavedBarbers />} />
                 
-                <Route path="/ServiceMatch" element={<ServiceMatch />} />
+                <Route path="/servicematch" element={<ServiceMatch />} />
                 
-                <Route path="/Services" element={<Services />} />
+                <Route path="/services" element={<Services />} />
                 
-                <Route path="/StyleQuiz" element={<StyleQuiz />} />
+                <Route path="/stylequiz" element={<StyleQuiz />} />
                 
-                <Route path="/SuperAdminDashboard" element={<SuperAdminDashboard />} />
+                <Route path="/superadmindashboard" element={<SuperAdminDashboard />} />
                 
-                <Route path="/Terms" element={<Terms />} />
+                <Route path="/terms" element={<Terms />} />
                 
             </Routes>
         </Layout>
