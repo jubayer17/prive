@@ -1,4 +1,4 @@
-import { base44 } from './base44Client';
+import { base44 } from "./base44Client";
 
 // Entity exports - these use the mock client
 export const Service = base44.entities.Service;
