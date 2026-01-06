@@ -1,6 +1,6 @@
 import { base44 } from './base44Client';
 
-
+// Entity exports - these use the mock client
 export const Service = base44.entities.Service;
 
 export const Barber = base44.entities.Barber;
@@ -16,8 +16,6 @@ export const BlogPost = base44.entities.BlogPost;
 export const Review = base44.entities.Review;
 
 export const Payment = base44.entities.Payment;
-
-
 
 // auth sdk:
 export const User = base44.auth;
