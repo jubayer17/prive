@@ -1,41 +1,51 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { createPageUrl } from '@/utils';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Instagram, Facebook, Twitter, Youtube, MapPin, Phone, Mail, ArrowRight, Loader2 } from 'lucide-react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { createPageUrl } from "@/utils";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+  MapPin,
+  Phone,
+  Mail,
+  ArrowRight,
+  Loader2,
+} from "lucide-react";
 
 const footerLinks = {
   services: [
-    { name: 'Haircuts', page: 'Services' },
-    { name: 'Beard Grooming', page: 'Services' },
-    { name: 'Hair Coloring', page: 'Services' },
-    { name: 'Spa Treatments', page: 'Services' }
+    { name: "Haircuts", page: "Services" },
+    { name: "Beard Grooming", page: "Services" },
+    { name: "Hair Coloring", page: "Services" },
+    { name: "Spa Treatments", page: "Services" },
   ],
   company: [
-    { name: 'About Us', page: 'About' },
-    { name: 'Our Team', page: 'Barbers' },
-    { name: 'Blog', page: 'Blog' },
-    { name: 'Contact', page: 'Contact' }
+    { name: "About Us", page: "About" },
+    { name: "Our Team", page: "Barbers" },
+    { name: "Blog", page: "Blog" },
+    { name: "Contact", page: "Contact" },
   ],
   support: [
-    { name: 'FAQ', page: 'FAQ' },
-    { name: 'Privacy Policy', page: 'Privacy' },
-    { name: 'Terms of Service', page: 'Terms' },
-    { name: 'Reviews', page: 'Reviews' }
-  ]
+    { name: "FAQ", page: "FAQ" },
+    { name: "Privacy Policy", page: "Privacy" },
+    { name: "Terms of Service", page: "Terms" },
+    { name: "Reviews", page: "Reviews" },
+  ],
 };
 
 const socials = [
-  { icon: Instagram, href: '#' },
-  { icon: Facebook, href: '#' },
-  { icon: Twitter, href: '#' },
-  { icon: Youtube, href: '#' }
+  { icon: Instagram, href: "#" },
+  { icon: Facebook, href: "#" },
+  { icon: Twitter, href: "#" },
+  { icon: Youtube, href: "#" },
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
 
@@ -45,7 +55,7 @@ export default function Footer() {
     setTimeout(() => {
       setLoading(false);
       setSubscribed(true);
-      setEmail('');
+      setEmail("");
     }, 1000);
   };
 
@@ -56,9 +66,12 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-light mb-3">Stay in the Loop</h3>
+              <h3 className="text-2xl md:text-3xl font-light mb-3">
+                Stay in the Loop
+              </h3>
               <p className="text-stone-400">
-                Get exclusive offers, style tips, and updates delivered to your inbox.
+                Get exclusive offers, style tips, and updates delivered to your
+                inbox.
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex gap-3">
@@ -78,7 +91,7 @@ export default function Footer() {
                 {loading ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
                 ) : subscribed ? (
-                  'Subscribed!'
+                  "Subscribed!"
                 ) : (
                   <>
                     Subscribe
@@ -96,11 +109,11 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <Link to={createPageUrl('Home')}>
-              <h2 className="text-2xl font-medium mb-4">Prive</h2>
+            <Link to={createPageUrl("Home")}>
+              <h2 className="text-2xl font-medium mb-4">Glowé</h2>
             </Link>
             <p className="text-stone-400 text-sm mb-6 leading-relaxed">
-              Premium grooming experience since 2020. Where precision meets luxury.
+              Premium beauty experience since 2020. Where artistry meets luxury.
             </p>
             <div className="flex gap-3">
               {socials.map((social, index) => {
@@ -120,9 +133,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">Services</h4>
+            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">
+              Services
+            </h4>
             <ul className="space-y-3">
-              {footerLinks.services.map(link => (
+              {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={createPageUrl(link.page)}
@@ -137,9 +152,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">Company</h4>
+            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">
+              Company
+            </h4>
             <ul className="space-y-3">
-              {footerLinks.company.map(link => (
+              {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={createPageUrl(link.page)}
@@ -154,9 +171,11 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">Support</h4>
+            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">
+              Support
+            </h4>
             <ul className="space-y-3">
-              {footerLinks.support.map(link => (
+              {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={createPageUrl(link.page)}
@@ -171,7 +190,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <h4 className="font-medium mb-4 text-sm uppercase tracking-wider">
+              Contact
+            </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-stone-400 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -183,7 +204,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-stone-400 text-sm">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>hello@prive.com</span>
+                <span>hello@glowe.com</span>
               </li>
             </ul>
           </div>
@@ -195,13 +216,13 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-stone-500 text-sm">
-              <p>© 2026 Prive. All rights reserved.</p>
+              <p>© 2026 Glowé. All rights reserved.</p>
               <span className="hidden md:inline">•</span>
               <p>
-                Developed by{' '}
-                <a 
-                  href="https://geekssort.com" 
-                  target="_blank" 
+                Developed by{" "}
+                <a
+                  href="https://geekssort.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-400 hover:text-amber-300 transition-colors font-medium"
                 >
@@ -210,10 +231,16 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex gap-6">
-              <Link to={createPageUrl('Privacy')} className="text-stone-500 hover:text-white text-sm transition-colors">
+              <Link
+                to={createPageUrl("Privacy")}
+                className="text-stone-500 hover:text-white text-sm transition-colors"
+              >
                 Privacy
               </Link>
-              <Link to={createPageUrl('Terms')} className="text-stone-500 hover:text-white text-sm transition-colors">
+              <Link
+                to={createPageUrl("Terms")}
+                className="text-stone-500 hover:text-white text-sm transition-colors"
+              >
                 Terms
               </Link>
             </div>
