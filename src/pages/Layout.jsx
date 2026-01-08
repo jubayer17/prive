@@ -1,17 +1,26 @@
-
-import React, { useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Sidebar from '@/components/layout/Sidebar';
+import React, { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Sidebar from "@/components/layout/Sidebar";
+import QuickBookWidget from "@/components/booking/QuickBookWidget";
 
 // Admin pages don't need the public layout
-const adminPages = ['SuperAdminDashboard', 'AdminDashboard', 'EditorDashboard'];
+const adminPages = ["SuperAdminDashboard", "AdminDashboard", "EditorDashboard"];
+
+// Pages where Quick Book widget should be hidden
+const hideQuickBookPages = [
+  "Booking",
+  "AdminDashboard",
+  "SuperAdminDashboard",
+  "EditorDashboard",
+];
 
 export default function Layout({ children, currentPageName }) {
   const location = useLocation();
   const isAdminPage = adminPages.includes(currentPageName);
+  const showQuickBook = !hideQuickBookPages.includes(currentPageName);
 
   // Scroll to top on route change
   useEffect(() => {
@@ -38,6 +47,7 @@ export default function Layout({ children, currentPageName }) {
         </motion.main>
       </AnimatePresence>
       <Footer />
+      {showQuickBook && <QuickBookWidget />}
     </div>
   );
 }
