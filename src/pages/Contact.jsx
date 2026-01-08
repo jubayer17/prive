@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
-import { MapPin, Phone, Mail, Clock, Send, Loader2, CheckCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  Loader2,
+  CheckCircle,
+} from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -35,10 +43,10 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl md:text-5xl font-light text-white mb-4">Get in Touch</h1>
-            <p className="text-stone-400 text-lg">
-              We'd love to hear from you
-            </p>
+            <h1 className="text-4xl md:text-5xl font-light text-white mb-4">
+              Get in Touch
+            </h1>
+            <p className="text-stone-400 text-lg">We'd love to hear from you</p>
           </motion.div>
         </div>
       </section>
@@ -52,7 +60,9 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="text-2xl font-light text-stone-900 mb-8">Send Us a Message</h2>
+              <h2 className="text-2xl font-light text-stone-900 mb-8">
+                Send Us a Message
+              </h2>
 
               {submitted ? (
                 <Card className="border-0 shadow-lg">
@@ -60,9 +70,12 @@ export default function Contact() {
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-xl font-medium text-stone-900 mb-2">Message Sent!</h3>
+                    <h3 className="text-xl font-medium text-stone-900 mb-2">
+                      Message Sent!
+                    </h3>
                     <p className="text-stone-500">
-                      Thank you for reaching out. We'll get back to you within 24 hours.
+                      Thank you for reaching out. We'll get back to you within
+                      24 hours.
                     </p>
                   </CardContent>
                 </Card>
@@ -76,7 +89,9 @@ export default function Contact() {
                           <Input
                             id="name"
                             value={formData.name}
-                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            onChange={(e) =>
+                              setFormData({ ...formData, name: e.target.value })
+                            }
                             placeholder="John Doe"
                             className="mt-2 rounded-xl"
                             required
@@ -88,7 +103,12 @@ export default function Contact() {
                             id="email"
                             type="email"
                             value={formData.email}
-                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            onChange={(e) =>
+                              setFormData({
+                                ...formData,
+                                email: e.target.value,
+                              })
+                            }
                             placeholder="john@example.com"
                             className="mt-2 rounded-xl"
                             required
@@ -100,7 +120,9 @@ export default function Contact() {
                         <Input
                           id="phone"
                           value={formData.phone}
-                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                          onChange={(e) =>
+                            setFormData({ ...formData, phone: e.target.value })
+                          }
                           placeholder="+1 (555) 123-4567"
                           className="mt-2 rounded-xl"
                         />
@@ -110,7 +132,12 @@ export default function Contact() {
                         <Textarea
                           id="message"
                           value={formData.message}
-                          onChange={(e) => setFormData({...formData, message: e.target.value})}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              message: e.target.value,
+                            })
+                          }
                           placeholder="How can we help you?"
                           className="mt-2 rounded-xl"
                           rows={5}
@@ -143,7 +170,9 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h2 className="text-2xl font-light text-stone-900 mb-8">Visit Us</h2>
+              <h2 className="text-2xl font-light text-stone-900 mb-8">
+                Visit Us
+              </h2>
 
               <div className="space-y-6 mb-12">
                 <div className="flex items-start gap-4">
@@ -153,8 +182,10 @@ export default function Contact() {
                   <div>
                     <h3 className="font-medium text-stone-900 mb-1">Address</h3>
                     <p className="text-stone-500">
-                      123 Style Street<br />
-                      Fashion District<br />
+                      123 Style Street
+                      <br />
+                      Fashion District
+                      <br />
                       New York, NY 10001
                     </p>
                   </div>
@@ -176,7 +207,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-stone-900 mb-1">Email</h3>
-                    <p className="text-stone-500">hello@hairy.com</p>
+                    <p className="text-stone-500">hello@glowe.com</p>
                   </div>
                 </div>
 
